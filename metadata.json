@@ -1,0 +1,8 @@
+{
+  "name": "FootPro AI",
+  "description": "FootPro AI — Football training, tactical learning, performance analytics, and AI coaching platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
