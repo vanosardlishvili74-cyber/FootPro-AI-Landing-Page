@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Language, SiteContent, WEB_APP_URL } from '../data/content';
+import footProLogo from '../assets/images/footpro-logo.webp';
 
 interface NavbarProps {
   language: Language;
@@ -33,20 +34,15 @@ export function Navbar({ language, onLanguageChange, content }: NavbarProps) {
           onClick={handleLinkClick}
           className="inline-flex items-center gap-2.5 whitespace-nowrap shrink-0 text-white transition-opacity duration-150 hover:opacity-90"
         >
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            className="shrink-0"
-          >
-            <rect x="1" y="1" width="26" height="26" rx="6" fill="#0D1912" stroke="#1E3828" strokeWidth="1.5" />
-            <circle cx="14" cy="14" r="6" stroke="#16F572" strokeWidth="1.75" />
-            <path d="M14 4V8M14 20V24M4 14H8M20 14H24" stroke="#16F572" strokeWidth="1.5" strokeLinecap="round" />
-            <circle cx="14" cy="14" r="1.75" fill="#16F572" />
-          </svg>
+          <img
+            src={footProLogo}
+            alt=""
+            width={34}
+            height={34}
+            decoding="async"
+            referrerPolicy="no-referrer"
+            className="h-8 w-8 sm:h-9 sm:w-9 shrink-0 rounded-lg object-contain"
+          />
           <span className="font-display text-xl font-bold tracking-tight text-white">
             FootPro <span className="text-[#16F572]">AI</span>
           </span>

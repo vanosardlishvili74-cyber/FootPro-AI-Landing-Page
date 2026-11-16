@@ -20,6 +20,8 @@ export function Hero({ content }: HeroProps) {
         <img
           src={heroPitchImg}
           alt=""
+          fetchPriority="high"
+          decoding="async"
           referrerPolicy="no-referrer"
           className="h-full w-full object-cover object-center opacity-65"
         />

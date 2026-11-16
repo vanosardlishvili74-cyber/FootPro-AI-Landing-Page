@@ -1,0 +1,23 @@
+{
+  "name": "FootPro AI",
+  "short_name": "FootPro AI",
+  "description": "FootPro AI — Football training, tactical learning, performance analytics, and AI coaching platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050806",
+  "theme_color": "#050806",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
