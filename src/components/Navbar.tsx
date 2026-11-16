@@ -32,11 +32,12 @@ export function Navbar({ language, onLanguageChange, content }: NavbarProps) {
         <a
           href="#top"
           onClick={handleLinkClick}
+          aria-label="FootPro AI"
           className="inline-flex items-center gap-2.5 whitespace-nowrap shrink-0 text-white transition-opacity duration-150 hover:opacity-90"
         >
           <img
             src={footProLogo}
-            alt=""
+            alt="FootPro AI logo"
             width={34}
             height={34}
             decoding="async"

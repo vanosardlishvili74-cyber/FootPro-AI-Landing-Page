@@ -47,6 +47,7 @@ export interface SiteContent {
     primaryCta: string;
     secondaryCta: string;
     availabilityNote: string;
+    backgroundAlt: string;
   };
   intro: {
     kicker: string;
@@ -132,9 +133,9 @@ export const WEB_APP_URL = 'https://footpro-ai-app.onrender.com';
 export const SITE_CONTENT: Record<Language, SiteContent> = {
   en: {
     meta: {
-      title: 'FootPro AI — Your Game. Your Progress.',
+      title: 'FootPro AI — Your Football Training & Performance Platform',
       description:
-        'FootPro AI brings player profiles, performance analytics, personal goals, training timers, tactical learning, AI coaching, and weekly planning into one focused football platform.',
+        'FootPro AI delivers football training timers, player performance analytics, personal goals, tactical learning, weekly planning, and an AI Coach.',
     },
     nav: {
       overview: 'Overview',
@@ -154,6 +155,7 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
       primaryCta: 'Open Web App',
       secondaryCta: 'Explore Features',
       availabilityNote: 'Available now in any modern browser · Android app coming soon',
+      backgroundAlt: 'Floodlit football stadium pitch at night',
     },
     intro: {
       kicker: 'What Is FootPro AI',
@@ -448,9 +450,9 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
   },
   ka: {
     meta: {
-      title: 'FootPro AI — შენი თამაში. შენი პროგრესი.',
+      title: 'FootPro AI — საფეხბურთო ვარჯიშისა და პერფორმანსის პლატფორმა',
       description:
-        'FootPro AI აერთიანებს მოთამაშის პროფილს, პერფორმანსის ანალიტიკას, პირად მიზნებს, ვარჯიშის ტაიმერს, ტაქტიკურ სწავლებას, AI მწვრთნელსა და კვირის გეგმას ერთ საფეხბურთო პლატფორმაში.',
+        'FootPro AI აერთიანებს საფეხბურთო ვარჯიშის ტაიმერს, მოთამაშის ანალიტიკას, პირად მიზნებს, ტაქტიკურ სწავლებას, კვირის გეგმასა და AI მწვრთნელს.',
     },
     nav: {
       overview: 'მიმოხილვა',
@@ -470,6 +472,7 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
       primaryCta: 'ვებ-აპლიკაციის გახსნა',
       secondaryCta: 'ფუნქციების ნახვა',
       availabilityNote: 'ხელმისაწვდომია ნებისმიერ ბრაუზერში · Android აპლიკაცია მალე დაემატება',
+      backgroundAlt: 'ღამის განათებული საფეხბურთო სტადიონის მოედანი',
     },
     intro: {
       kicker: 'რა არის FootPro AI',

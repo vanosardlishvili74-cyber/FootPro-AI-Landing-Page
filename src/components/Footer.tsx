@@ -20,11 +20,12 @@ export function Footer({ language, onLanguageChange, content, nav }: FooterProps
           <div className="lg:col-span-5">
             <a
               href="#top"
+              aria-label="FootPro AI"
               className="inline-flex items-center gap-2.5 text-white transition-opacity duration-150 hover:opacity-90"
             >
               <img
                 src={footProLogo}
-                alt=""
+                alt="FootPro AI logo"
                 width={32}
                 height={32}
                 loading="lazy"
@@ -43,9 +44,9 @@ export function Footer({ language, onLanguageChange, content, nav }: FooterProps
 
           {/* Navigation Mirror */}
           <div className="lg:col-span-2">
-            <h3 className="text-xs font-semibold tracking-wide text-white">
+            <h2 className="text-xs font-semibold tracking-wide text-white">
               {content.navigationTitle}
-            </h3>
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm text-[#9CB0A3]">
               <li>
                 <a href="#about" className="transition-colors duration-150 hover:text-white">
@@ -72,9 +73,9 @@ export function Footer({ language, onLanguageChange, content, nav }: FooterProps
 
           {/* Platform Access */}
           <div className="lg:col-span-3">
-            <h3 className="text-xs font-semibold tracking-wide text-white">
+            <h2 className="text-xs font-semibold tracking-wide text-white">
               {content.accessTitle}
-            </h3>
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <a
@@ -93,9 +94,9 @@ export function Footer({ language, onLanguageChange, content, nav }: FooterProps
 
           {/* Language Selection */}
           <div className="lg:col-span-2">
-            <h3 className="text-xs font-semibold tracking-wide text-white">
+            <h2 className="text-xs font-semibold tracking-wide text-white">
               {content.languageTitle}
-            </h3>
+            </h2>
             <div className="mt-4 flex flex-col items-start gap-2">
               <button
                 type="button"

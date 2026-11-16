@@ -30,12 +30,16 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = language;
     document.title = content.meta.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', content.meta.description);
+    }
     try {
       window.localStorage.setItem(STORAGE_KEY, language);
     } catch {
       // Ignore storage access errors
     }
-  }, [language, content.meta.title]);
+  }, [language, content.meta.title, content.meta.description]);
 
   return (
     <MotionConfig reducedMotion="user">

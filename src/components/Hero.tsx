@@ -19,7 +19,7 @@ export function Hero({ content }: HeroProps) {
       <div className="absolute inset-0 -z-10">
         <img
           src={heroPitchImg}
-          alt=""
+          alt={content.backgroundAlt}
           fetchPriority="high"
           decoding="async"
           referrerPolicy="no-referrer"
