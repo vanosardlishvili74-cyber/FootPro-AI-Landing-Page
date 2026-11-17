@@ -13,16 +13,20 @@ export interface FeatureItem {
   featured?: boolean;
 }
 
+export type GalleryScreenId =
+  | 'home-dashboard'
+  | 'match-history'
+  | 'player-profile'
+  | 'training-timer'
+  | 'ai-coach';
+
 export interface GallerySlot {
-  id: string;
+  id: GalleryScreenId;
   index: string;
-  formFactor: 'web' | 'mobile';
-  formFactorLabel: string;
   title: string;
-  placeholderLabel: string;
+  shortLabel: string;
   caption: string;
-  aspectSpec: string;
-  plannedModule: string;
+  alt: string;
 }
 
 export interface SiteContent {
@@ -79,16 +83,10 @@ export interface SiteContent {
     kicker: string;
     heading: string;
     subtitle: string;
-    disclaimer: string;
-    filters: Array<{
-      id: 'all' | 'web' | 'mobile';
-      label: string;
-    }>;
     inspectSlot: string;
+    previousLabel: string;
+    nextLabel: string;
     modalClose: string;
-    modalSpecLabel: string;
-    modalModuleLabel: string;
-    modalPendingNotice: string;
     slots: GallerySlot[];
   };
   download: {
@@ -310,88 +308,59 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
       ],
     },
     gallery: {
-      kicker: 'App Preview',
-      heading: 'Interface gallery.',
+      kicker: 'Inside The App',
+      heading: 'Real screens from FootPro AI.',
       subtitle:
-        'Reserved placeholder frames showing the planned screen architecture of FootPro AI. Real application screenshots will replace these frames directly.',
-      disclaimer: 'Placeholder slots only — real app screenshots pending capture',
-      filters: [
-        { id: 'all', label: 'All Frames' },
-        { id: 'web', label: 'Web Screens' },
-        { id: 'mobile', label: 'Mobile Screens' },
-      ],
-      inspectSlot: 'View frame details',
+        'Explore the live FootPro AI mobile interface across your daily dashboard, match log, player profile, interval timer, and AI Coach.',
+      inspectSlot: 'View full screen',
+      previousLabel: 'Previous screen',
+      nextLabel: 'Next screen',
       modalClose: 'Close',
-      modalSpecLabel: 'Frame Specification',
-      modalModuleLabel: 'Planned Screen',
-      modalPendingNotice:
-        'This frame is an intentional placeholder. No synthetic or fabricated app UI is shown here; official FootPro AI screenshots will be placed into this slot once captured.',
       slots: [
         {
-          id: 'shot-player-profile',
+          id: 'home-dashboard',
           index: '01',
-          formFactor: 'web',
-          formFactorLabel: 'Web View',
-          title: 'Player Profile & Identity Overview',
-          placeholderLabel: 'Screenshot Placeholder · Screen 01',
-          caption: 'Reserved for the desktop Player Profile workspace.',
-          aspectSpec: '16:9 Desktop Capture Slot',
-          plannedModule: 'Player Profile',
+          shortLabel: 'Home',
+          title: 'Main Dashboard',
+          caption:
+            'Daily overview with player rating, training streak, completed sessions, and quick access to timer and AI Coach.',
+          alt: 'FootPro AI main dashboard screenshot showing player greeting, 75 OVR rating, streak counter, completed sessions, and quick action buttons',
         },
         {
-          id: 'shot-performance-analytics',
+          id: 'match-history',
           index: '02',
-          formFactor: 'web',
-          formFactorLabel: 'Web View',
-          title: 'Performance Analytics Dashboard',
-          placeholderLabel: 'Screenshot Placeholder · Screen 02',
-          caption: 'Reserved for session trends and training balance charts.',
-          aspectSpec: '16:9 Desktop Capture Slot',
-          plannedModule: 'Performance Analytics',
+          shortLabel: 'Matches',
+          title: 'Match History',
+          caption:
+            'Log played matches and review goals, assists, minutes played, and match performance records in one place.',
+          alt: 'FootPro AI Match History screenshot displaying matches played, goals, assists, minutes played, and add new match button',
         },
         {
-          id: 'shot-ai-coach',
+          id: 'player-profile',
           index: '03',
-          formFactor: 'mobile',
-          formFactorLabel: 'Mobile View',
-          title: 'AI Coach Session Interface',
-          placeholderLabel: 'Screenshot Placeholder · Screen 03',
-          caption: 'Reserved for mobile AI Coach guidance and feedback flow.',
-          aspectSpec: '9:16 Mobile Capture Slot',
-          plannedModule: 'AI Coach',
+          shortLabel: 'Profile',
+          title: 'Player Profile',
+          caption:
+            'Configure your position, targets, weekly schedule, profile wizard, and player card photo.',
+          alt: 'FootPro AI Player Profile screenshot showing position and schedule controls, profile wizard, and player photo upload',
         },
         {
-          id: 'shot-tactical-learning',
+          id: 'training-timer',
           index: '04',
-          formFactor: 'web',
-          formFactorLabel: 'Web View',
-          title: 'Tactical Learning Module',
-          placeholderLabel: 'Screenshot Placeholder · Screen 04',
-          caption: 'Reserved for formation and tactical study screens.',
-          aspectSpec: '16:9 Desktop Capture Slot',
-          plannedModule: 'Tactical Learning',
+          shortLabel: 'Timer',
+          title: 'Training Timer',
+          caption:
+            'Athletic interval timer with configurable work and rest cycles, round tracking, and pitchside audio cues.',
+          alt: 'FootPro AI Training Timer screenshot showing athletic interval timer, sound toggle, and active work phase',
         },
         {
-          id: 'shot-training-timer',
+          id: 'ai-coach',
           index: '05',
-          formFactor: 'mobile',
-          formFactorLabel: 'Mobile View',
-          title: 'Training Timer Pitchside View',
-          placeholderLabel: 'Screenshot Placeholder · Screen 05',
-          caption: 'Reserved for active interval and drill timer screen.',
-          aspectSpec: '9:16 Mobile Capture Slot',
-          plannedModule: 'Training Timer',
-        },
-        {
-          id: 'shot-weekly-planner',
-          index: '06',
-          formFactor: 'web',
-          formFactorLabel: 'Web View',
-          title: 'Weekly Planner & Personal Goals',
-          placeholderLabel: 'Screenshot Placeholder · Screen 06',
-          caption: 'Reserved for seven-day training schedule and goal view.',
-          aspectSpec: '16:9 Desktop Capture Slot',
-          plannedModule: 'Weekly Planner · Personal Goals',
+          shortLabel: 'AI Coach',
+          title: 'AI Coach',
+          caption:
+            'Generate personalized training plans and football guidance tailored to your position and logged activity.',
+          alt: 'FootPro AI Coach screenshot showing UEFA standards methodology, training plan generator, and saved plans tabs',
         },
       ],
     },
@@ -627,88 +596,59 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
       ],
     },
     gallery: {
-      kicker: 'აპლიკაციის პრევიუ',
-      heading: 'ინტერფეისის გალერეა.',
+      kicker: 'აპლიკაციის ეკრანები',
+      heading: 'FootPro AI რეალურ მოქმედებაში.',
       subtitle:
-        'ქვემოთ მოცემულია მკაფიოდ მონიშნული სქრინშოტების ადგილები. რეალური აპლიკაციის ეკრანების გადაღების შემდეგ ისინი პირდაპირ ჩანაცვლდება.',
-      disclaimer: 'მხოლოდ სქრინშოტის ადგილები — რეალური ეკრანები მალე დაემატება',
-      filters: [
-        { id: 'all', label: 'ყველა ეკრანი' },
-        { id: 'web', label: 'ვებ ვერსია' },
-        { id: 'mobile', label: 'მობილური ვერსია' },
-      ],
-      inspectSlot: 'ჩარჩოს დეტალები',
+        'დაათვალიერე FootPro AI-ის რეალური მობილური ინტერფეისი — მთავარი დაფიდან და მატჩების ისტორიიდან დაწყებული, ტაიმერითა და AI მწვრთნელით დასრულებული.',
+      inspectSlot: 'სრულად ნახვა',
+      previousLabel: 'წინა ეკრანი',
+      nextLabel: 'შემდეგი ეკრანი',
       modalClose: 'დახურვა',
-      modalSpecLabel: 'ჩარჩოს ფორმატი',
-      modalModuleLabel: 'დაგეგმილი ეკრანი',
-      modalPendingNotice:
-        'ეს ბლოკი წარმოადგენს სქრინშოტის წინასწარ გამოყოფილ ადგილს. გამოგონილი ინტერფეისი აქ არ არის ნაჩვენები — ოფიციალური სქრინშოტები მოგვიანებით ჩაისმება.',
       slots: [
         {
-          id: 'shot-player-profile',
+          id: 'home-dashboard',
           index: '01',
-          formFactor: 'web',
-          formFactorLabel: 'ვებ ხედი',
-          title: 'მოთამაშის პროფილი და მახასიათებლები',
-          placeholderLabel: 'სქრინშოტის ადგილი · ეკრანი 01',
-          caption: 'გამოყოფილია მოთამაშის პროფილის დესკტოპ სქრინშოტისთვის.',
-          aspectSpec: '16:9 დესკტოპ სქრინშოტის ფორმატი',
-          plannedModule: 'მოთამაშის პროფილი',
+          shortLabel: 'მთავარი',
+          title: 'მთავარი დაფა',
+          caption:
+            'ყოველდღიური მიმოხილვა საერთო რეიტინგით, სერიით, დასრულებული სესიებითა და სწრაფი მოქმედებებით.',
+          alt: 'FootPro AI მთავარი დაფის ეკრანის სქრინშოტი მოთამაშის მისალმებით, საერთო რეიტინგით, სერიითა და სწრაფი ღილაკებით',
         },
         {
-          id: 'shot-performance-analytics',
+          id: 'match-history',
           index: '02',
-          formFactor: 'web',
-          formFactorLabel: 'ვებ ხედი',
-          title: 'პერფორმანსის ანალიტიკის დაფა',
-          placeholderLabel: 'სქრინშოტის ადგილი · ეკრანი 02',
-          caption: 'გამოყოფილია ვარჯიშის სტატისტიკისა და ტრენდების ეკრანისთვის.',
-          aspectSpec: '16:9 დესკტოპ სქრინშოტის ფორმატი',
-          plannedModule: 'პერფორმანსის ანალიტიკა',
+          shortLabel: 'მატჩები',
+          title: 'მატჩების ისტორია',
+          caption:
+            'აღრიცხე ჩატარებული მატჩები, გატანილი გოლები, საგოლე გადაცემები და ნათამაშები წუთები ერთ სივრცეში.',
+          alt: 'FootPro AI მატჩების ისტორიის სქრინშოტი ჩატარებული თამაშების, გოლების, ასისტებისა და წუთების მონაცემებით',
         },
         {
-          id: 'shot-ai-coach',
+          id: 'player-profile',
           index: '03',
-          formFactor: 'mobile',
-          formFactorLabel: 'მობილური ხედი',
-          title: 'AI მწვრთნელის ინტერფეისი',
-          placeholderLabel: 'სქრინშოტის ადგილი · ეკრანი 03',
-          caption: 'გამოყოფილია AI მწვრთნელთან მობილური დიალოგის ეკრანისთვის.',
-          aspectSpec: '9:16 მობილური სქრინშოტის ფორმატი',
-          plannedModule: 'AI მწვრთნელი',
+          shortLabel: 'პროფილი',
+          title: 'მოთამაშის პროფილი',
+          caption:
+            'მართე პოზიცია, პირადი მიზნები, გრაფიკი, პროფილის ოსტატი და მოთამაშის ბარათის ფოტო.',
+          alt: 'FootPro AI მოთამაშის პროფილის სქრინშოტი პოზიციის, მიზნების, გრაფიკისა და ფოტოს ატვირთვის პარამეტრებით',
         },
         {
-          id: 'shot-tactical-learning',
+          id: 'training-timer',
           index: '04',
-          formFactor: 'web',
-          formFactorLabel: 'ვებ ხედი',
-          title: 'ტაქტიკური სწავლების მოდული',
-          placeholderLabel: 'სქრინშოტის ადგილი · ეკრანი 04',
-          caption: 'გამოყოფილია ტაქტიკური სქემებისა და გაკვეთილების ეკრანისთვის.',
-          aspectSpec: '16:9 დესკტოპ სქრინშოტის ფორმატი',
-          plannedModule: 'ტაქტიკური სწავლება',
+          shortLabel: 'ტაიმერი',
+          title: 'ვარჯიშის ტაიმერი',
+          caption:
+            'ინტერვალური სავარჯიშო ტაიმერი სამუშაო და დასვენების ციკლებით, რაუნდებითა და ხმოვანი სიგნალებით.',
+          alt: 'FootPro AI ვარჯიშის ტაიმერის სქრინშოტი ინტერვალური ტაიმერით, ხმოვანი ღილაკითა და სამუშაო ფაზით',
         },
         {
-          id: 'shot-training-timer',
+          id: 'ai-coach',
           index: '05',
-          formFactor: 'mobile',
-          formFactorLabel: 'მობილური ხედი',
-          title: 'ვარჯიშის ტაიმერი მოედანზე',
-          placeholderLabel: 'სქრინშოტის ადგილი · ეკრანი 05',
-          caption: 'გამოყოფილია ინტერვალური ტაიმერის მობილური ეკრანისთვის.',
-          aspectSpec: '9:16 მობილური სქრინშოტის ფორმატი',
-          plannedModule: 'ვარჯიშის ტაიმერი',
-        },
-        {
-          id: 'shot-weekly-planner',
-          index: '06',
-          formFactor: 'web',
-          formFactorLabel: 'ვებ ხედი',
-          title: 'კვირის გეგმა და პირადი მიზნები',
-          placeholderLabel: 'სქრინშოტის ადგილი · ეკრანი 06',
-          caption: 'გამოყოფილია 7-დღიანი გრაფიკისა და მიზნების ეკრანისთვის.',
-          aspectSpec: '16:9 დესკტოპ სქრინშოტის ფორმატი',
-          plannedModule: 'კვირის გეგმა · პირადი მიზნები',
+          shortLabel: 'AI მწვრთნელი',
+          title: 'AI მწვრთნელი',
+          caption:
+            'ინდივიდუალური სავარჯიშო გეგმების გენერატორი და საფეხბურთო რეკომენდაციები თქვენს მონაცემებზე დაყრდნობით.',
+          alt: 'FootPro AI მწვრთნელის სქრინშოტი გეგმის გენერატორით, შენახული გეგმებითა და მეთოდოლოგიით',
         },
       ],
     },
