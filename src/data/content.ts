@@ -33,6 +33,9 @@ export interface SiteContent {
   meta: {
     title: string;
     description: string;
+    canonicalUrl: string;
+    ogLocale: string;
+    ogAlternateLocale: string;
   };
   nav: {
     overview: string;
@@ -134,6 +137,9 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
       title: 'FootPro AI — Your Football Training & Performance Platform',
       description:
         'FootPro AI delivers football training timers, player performance analytics, personal goals, tactical learning, weekly planning, and an AI Coach.',
+      canonicalUrl: 'https://footpro-ai-website.onrender.com/',
+      ogLocale: 'en_US',
+      ogAlternateLocale: 'ka_GE',
     },
     nav: {
       overview: 'Overview',
@@ -422,6 +428,9 @@ export const SITE_CONTENT: Record<Language, SiteContent> = {
       title: 'FootPro AI — საფეხბურთო ვარჯიშისა და პერფორმანსის პლატფორმა',
       description:
         'FootPro AI აერთიანებს საფეხბურთო ვარჯიშის ტაიმერს, მოთამაშის ანალიტიკას, პირად მიზნებს, ტაქტიკურ სწავლებას, კვირის გეგმასა და AI მწვრთნელს.',
+      canonicalUrl: 'https://footpro-ai-website.onrender.com/ka/',
+      ogLocale: 'ka_GE',
+      ogAlternateLocale: 'en_US',
     },
     nav: {
       overview: 'მიმოხილვა',
